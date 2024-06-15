@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: javaapplication
+  labels:
+    app: appjava
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: appjava
+  template:
+    metadata:
+      labels:
+        app: appjava
+    spec:
+      containers:
+      - name: game
+        image: gitlabimage/bgame:latest 
+        ports:
+        - containerPort: 8080
