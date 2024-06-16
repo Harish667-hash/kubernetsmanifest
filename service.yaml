@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: javaapplication-service
+  labels:
+    app: appjava
+spec:
+  selector:
+    app: appjava
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: ClusterIP 
